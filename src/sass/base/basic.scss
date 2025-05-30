@@ -1,4 +1,36 @@
+@use "/src/sass/base/variables.scss" as *;
+
 html{
     font-family: "Forum", serif;
 }
 
+h1, h2, h3, h4, h5, h6, p, figure{
+    margin: 0;
+    padding: 0;
+}
+
+.container{
+    position: relative;
+    width: 1116px;
+    margin: 0 auto;
+}
+
+@media screen and (max-width: $breakpoint-xl) {
+    .container{
+        width: 100%;
+        margin: 0;
+        padding: 0 80px;
+    }
+}
+
+@media screen and (max-width: $breakpoint-lg) {
+    .container{
+        padding: 0 50px;
+    }
+}
+
+@media screen and (max-width: $breakpoint-sm) {
+    .container{
+        padding: 0 15px;
+    }
+}

@@ -1,0 +1,253 @@
+@use "/src/sass/base/variables.scss" as *;
+
+.promo {
+  background: linear-gradient(90deg, transparent 60%, $color-dark 40%);
+  height: 100vh;
+
+  &__content {
+    display: grid;
+    grid-template-columns: 475px 547px;
+    align-items: center;
+    justify-content: center;
+    gap: 94px;
+    height: 100vh;
+    position: relative;
+  }
+
+  &__title {
+    font-weight: 400;
+    font-size: 64px;
+    line-height: 100%;
+    letter-spacing: 3%;
+    vertical-align: middle;
+    color: $color-dark;
+    mix-blend-mode: difference;
+  }
+
+  &__subtitle {
+    margin-top: 50px;
+    text-align: right;
+  }
+
+  &__link {
+    display: inline-block;
+    position: relative;
+    font-family: Segoe UI;
+    font-weight: 300;
+    font-style: italic;
+    font-size: 18px;
+    line-height: 100%;
+    vertical-align: middle;
+    color: $color-dark;
+    mix-blend-mode: difference;
+    text-decoration: none;
+    transition: all .3s ease-in;
+    &::before {
+      display: block;
+      content: "";
+      height: .5px;
+      width: 130px;
+      background-color: $color-dark;
+      position: absolute;
+      top: 50%;
+      left: -168px;
+    }
+    &:hover{
+      transform: translateX(5%);
+      opacity: .7;
+      &::before{
+        opacity: .7;
+      }
+    }
+  }
+
+
+  &__description {
+    position: absolute;
+    right: 0;
+    bottom: 60px;
+    text-align: right;
+  }
+
+  &__name-link {
+    font-family: "Open Sans", sans-serif;
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 100%;
+    letter-spacing: 1px;
+    text-align: right;
+    vertical-align: middle;
+    text-transform: uppercase;
+    color: $color-white;
+    text-decoration: none;
+    transition: all .3s ease-in;
+    &:hover{
+      opacity: .7;
+    }
+  }
+
+  &__contain {
+    margin-top: 9px;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 100;
+    font-size: 18px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    vertical-align: middle;
+    color: $color-grey;
+  }
+
+  &__price {
+    margin-top: 9px;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 100;
+    font-style: italic;
+    font-size: 18px;
+    line-height: 100%;
+    letter-spacing: 0.7px;
+    vertical-align: middle;
+    color: $color-camel;
+  }
+
+  &__button {
+    font-family: "Open Sans", sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 100%;
+    letter-spacing: 1px;
+    vertical-align: middle;
+    text-transform: uppercase;
+    background-color: transparent;
+    border: none;
+    color: $color-dark;
+    mix-blend-mode: difference;
+    cursor: pointer;
+    border-bottom: 1px solid transparent;
+    transition: all .3s ease-in;
+    &:hover{
+      border-bottom: 1px solid;
+    }
+  }
+
+  &__switch {
+    position: absolute;
+    left: 0;
+    bottom: 60px;
+  }
+}
+
+@media screen and (max-width: $breakpoint-xl) {
+  .promo {
+    background: linear-gradient(135deg, transparent 55%, $color-dark 45%);
+    height: auto;
+
+    &__content {
+      height: auto;
+      padding: 120px 0;
+      grid-template-columns: 1fr;
+      justify-items: center;
+      gap: 40px;
+    }
+    &__button{
+      color: $color-grey;
+  }
+
+  &__title{
+    text-align: center;
+  }
+  &__subtitle{
+    margin-top: 40px;
+    text-align: center;
+  }
+  &__link{
+    &::before{
+      left: -120px;
+      width: 90px;
+    }
+  }
+
+    &__left{
+        align-self: center;
+    }
+
+    &__right{
+        align-self: start;
+    }
+
+  }
+}
+
+
+@media screen and (max-width: $breakpoint-lg) {
+    .promo{
+        &__switch{
+            bottom: 20px;
+        }
+        &__description{
+            bottom: 20px;
+        }
+    }
+}
+
+@media screen and (max-width: $breakpoint-sm) {
+    .promo{
+        background: linear-gradient(150deg, transparent 50%, $color-dark 50%);
+
+        &__content{
+          padding: 80px 0 40px 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        
+
+        &__title{
+            font-size: 40px;
+        }
+
+        &__link{
+            font-size: 15px;
+            &::before{
+                width: 50px;
+                left: -60px;
+            }
+        }
+
+        &__img{
+            max-width: 95%;
+            margin: 0 auto;
+        }
+        &__right{
+            align-self: center;
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+        &__description{
+            position: relative;
+            bottom: 0;
+        }
+
+        &__switch{
+            position: relative;
+            left: 0;
+            bottom: 0;
+        }
+
+        &__name-link{
+          font-size: 15px;
+        }
+        &__contain {
+          margin-top: 7px;
+          font-size: 15px;
+        }
+        &__price{
+          margin-top: 7px;
+          font-size: 15px;
+        }
+
+        &__button{
+          font-size: 15px;
+        }
+    }
+}
