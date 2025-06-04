@@ -3,11 +3,14 @@
 @use "/src/sass/base/variables.scss" as *;
 @use "/src/sass/base/basic.scss";
 
+@use "/src/sass/ui/card.scss";
+
 
 @use "/src/sass/blocks/header.scss";
 @use "/src/sass/blocks/promo.scss";
 @use "/src/sass/blocks/choice.scss";
 @use "/src/sass/blocks/location.scss";
+@use "/src/sass/blocks/catalog.scss";
 
 
 

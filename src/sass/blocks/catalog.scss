@@ -1,0 +1,50 @@
+@use "/src/sass/base/variables.scss" as *;
+
+.catalog {
+  padding: 20px 0;
+
+  &__wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr 1fr;
+    grid-template-rows: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  &__card_large {
+    aspect-ratio: auto;
+    grid-column: 2 / 3;
+    grid-row: 1 / 3;
+  }
+}
+
+@media screen and (max-width: $breakpoint-xl) {
+  .catalog {
+    &__wrapper {
+      grid-template-columns: 1fr  1fr;
+      grid-template-rows: repeat(3, 1fr);
+    }
+  }
+}
+
+@media screen and (max-width: $breakpoint-md) {
+    .catalog {
+      &__wrapper {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        padding: 0 15%;
+      }
+      &__card_large {
+        grid-column: auto;
+        grid-row: auto;
+      }
+    }
+  }
+
+
+  @media screen and (max-width: $breakpoint-sm) {
+    .catalog {
+      &__wrapper {
+        padding: 0;
+      }
+    }
+  }
