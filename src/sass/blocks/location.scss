@@ -1,0 +1,147 @@
+@use "/src/sass/base/variables.scss" as *;
+
+.location {
+  background-color: $color-dark;
+  &__wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1.028fr;
+    place-items: center;
+  }
+
+  &__search {
+    padding: 0 162px;
+  }
+
+  &__title {
+    font-weight: 400;
+    font-size: 48px;
+    line-height: 100%;
+    letter-spacing: 3%;
+    vertical-align: middle;
+    color: $color-white;
+  }
+
+  &__text {
+    margin-top: 16px;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 100%;
+    vertical-align: middle;
+    color: $color-white;
+  }
+
+  &__form {
+    margin-top: 60px;
+    position: relative;
+    max-width: 390px;
+  }
+
+  &__input {
+    width: 100%;
+    padding: 0 43px 10px 5px;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1.8px solid $color-white;
+    outline: none;
+    color: $color-white;
+    transition: all .3s ease-in;
+
+    &::placeholder {
+      font-family: "Open Sans", sans-serif;
+      font-weight: 300;
+      font-size: 18px;
+      line-height: 100%;
+      vertical-align: middle;
+      color: $color-white;
+      opacity: 0.4;
+    }
+
+    &:hover{
+        opacity: .8;
+    }
+  }
+
+  &__button {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    translate: 0 -50%;
+    background-color: transparent;
+    border: none;
+    color: $color-white;
+    font-size: 30px;
+    opacity: 0.6;
+    cursor: pointer;
+    transition: all 0.3s ease-in;
+    &:hover {
+      translate: 20% -50%;
+      opacity: 0.4;
+    }
+  }
+
+  &__map {
+    width: 100%;
+    aspect-ratio: 1.225 / 1;
+  }
+}
+
+@media screen and (max-width: $breakpoint-xl) {
+  .location {
+    &__search {
+      padding: 0 80px;
+    }
+  }
+}
+
+@media screen and (max-width: $breakpoint-lg) {
+  .location {
+    &__search {
+      padding: 0 50px;
+    }
+  }
+}
+
+@media screen and (max-width: $breakpoint-md) {
+    .location {
+      &__wrapper{
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(2, 1fr);
+        gap: 20px;
+      }
+      &__search {
+        width: 100%;
+        padding: 0 50px;
+      }
+    }
+  }
+
+@media screen and (max-width: $breakpoint-sm) {
+  .location {
+    &__search {
+      padding: 0 15px;
+    }
+
+    &__title{
+        font-size: 34px;
+    }
+
+    &__text{
+        margin-top: 15px;
+        font-size: 12px;
+    }
+
+    &__form{
+        margin-top: 30px;
+    }
+    &__input{
+        border-bottom: 1px solid;
+        &::placeholder{
+            font-size: 14px;
+        }
+    }
+    &__button{
+        font-size: 24px;
+    }
+  }
+}
